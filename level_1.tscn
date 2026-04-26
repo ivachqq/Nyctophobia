@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b32ua1a8ggd2p"]
+
+[ext_resource type="Script" uid="uid://chkuxh0fac6g1" path="res://level_1.gd" id="1_3hls8"]
+
+[node name="Level1" type="Node2D" unique_id=800710935]
+script = ExtResource("1_3hls8")
+
+[node name="Label" type="Label" parent="." unique_id=1578101252]
+offset_left = 366.0
+offset_top = 126.0
+offset_right = 699.0
+offset_bottom = 317.0
+text = "LEVEL1"
