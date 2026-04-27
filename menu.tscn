@@ -1,26 +1,136 @@
 [gd_scene format=3 uid="uid://wtett8f2psbl"]
 
 [ext_resource type="Script" uid="uid://bl252b0g2cavg" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://cpkmobudcalhf" path="res://forestBachMenu.jpg" id="2_ouk20"]
+[ext_resource type="Texture2D" uid="uid://b2p7qmfxs0307" path="res://lanternMenu.png" id="3_4hy44"]
+[ext_resource type="Texture2D" uid="uid://dbxaqv4xamo5m" path="res://menuButtons.png" id="3_mae5d"]
+
+[sub_resource type="Gradient" id="Gradient_4hy44"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ytr4m"]
+gradient = SubResource("Gradient_4hy44")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Animation" id="Animation_l48gv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.5]
+}
+
+[sub_resource type="Animation" id="Animation_ecwwl"]
+resource_name = "flicker"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.03333333, 0.1, 0.15, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [2.5, 0.2, 2.5, 0.8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kk3ma"]
+_data = {
+&"RESET": SubResource("Animation_l48gv"),
+&"flicker": SubResource("Animation_ecwwl")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hy44"]
+atlas = ExtResource("3_mae5d")
+region = Rect2(754.0197, 315.93375, 286.63922, 78.128845)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytr4m"]
+atlas = ExtResource("3_mae5d")
+region = Rect2(53, 50.190758, 681.0006, 175.30923)
 
 [node name="Menu" type="Node2D" unique_id=1072265707]
 script = ExtResource("1_lti8b")
 
-[node name="ButtonQuit" type="Button" parent="." unique_id=1609955530]
-offset_left = 388.0
-offset_top = 359.0
-offset_right = 706.0
-offset_bottom = 484.0
-theme_override_font_sizes/font_size = 40
-text = "Выйти
-"
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=31620723]
+repeat_size = Vector2(1814, 0)
+autoscroll = Vector2(-30, 0)
+repeat_times = 100
 
-[node name="ButtonPlay" type="Button" parent="." unique_id=998565943]
-offset_left = 387.0
-offset_top = 146.0
-offset_right = 703.0
-offset_bottom = 262.0
-theme_override_font_sizes/font_size = 40
-text = "Играть"
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1881152271]
+position = Vector2(907, 540)
+scale = Vector2(1.085, 1.148)
+texture = ExtResource("2_ouk20")
 
-[connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
-[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
+[node name="Lantern" type="Sprite2D" parent="." unique_id=1428876435]
+position = Vector2(940.99994, 304)
+scale = Vector2(0.7011719, 0.6035157)
+texture = ExtResource("3_4hy44")
+
+[node name="PointLight2D" type="PointLight2D" parent="Lantern" unique_id=1644131781]
+color = Color(0.57254905, 0.9843137, 0.07450981, 1)
+energy = 2.5
+texture = SubResource("GradientTexture2D_ytr4m")
+texture_scale = 5.6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lantern" unique_id=1263216672]
+libraries/ = SubResource("AnimationLibrary_kk3ma")
+autoplay = &"flicker"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=796258346]
+
+[node name="ButtonQuit" type="TextureButton" parent="CanvasLayer" unique_id=348689768]
+z_index = 1
+offset_left = 801.0
+offset_top = 901.0
+offset_right = 1087.0
+offset_bottom = 979.0
+texture_normal = SubResource("AtlasTexture_4hy44")
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonQuit" unique_id=959656575]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7294118, 0.7294118, 0.7294118, 1)
+theme_override_font_sizes/font_size = 24
+text = "ВЫЙТИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPlay" type="TextureButton" parent="CanvasLayer" unique_id=278846970]
+z_index = 1
+offset_left = 607.0
+offset_top = 702.0
+offset_right = 1295.0
+offset_bottom = 861.0
+texture_normal = SubResource("AtlasTexture_ytr4m")
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonPlay" unique_id=13251617]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.69411767, 0.68235296, 0.68235296, 1)
+theme_override_font_sizes/font_size = 40
+text = "ИГРАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonPlay" to="." method="_on_button_play_pressed"]
