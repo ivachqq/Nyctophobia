@@ -295,6 +295,8 @@ radius = 16.0
 script = ExtResource("1_hjaqi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=678990716]
+position = Vector2(-2.861023e-06, -5)
+scale = Vector2(1.6458334, 1.5)
 sprite_frames = SubResource("SpriteFrames_6lu7o")
 animation = &"Idle_down"
 autoplay = "Idle_down"

@@ -3,7 +3,7 @@ extends CharacterBody2D
 enum { DOWN, UP, LEFT, RIGHT }
 
 @onready var anim = $AnimatedSprite2D
-var speed = 150
+var speed = 450
 var idle_dir = DOWN
 
 
