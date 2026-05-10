@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dqd7s1jqu1bq6"]
 
-[ext_resource type="Texture2D" uid="uid://tq2nfila3yvl" path="res://scene/Gemini_Generated_Image_e8ajade8ajade8aj.png" id="1_mkbs2"]
+[ext_resource type="Texture2D" uid="uid://tq2nfila3yvl" path="res://animation/Gemini_Generated_Image_e8ajade8ajade8aj.png" id="1_mkbs2"]
 [ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scene/player.tscn" id="2_2ya1j"]
 [ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="3_avwpl"]
-[ext_resource type="Texture2D" uid="uid://u17wlmsdwigd" path="res://scene/liberybackk.png" id="4_2ya1j"]
+[ext_resource type="Texture2D" uid="uid://u17wlmsdwigd" path="res://animation/liberybackk.png" id="4_2ya1j"]
 
 [node name="libery" type="Node2D" unique_id=83393765]
 

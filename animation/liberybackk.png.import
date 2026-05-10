@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8mveb2c70vmr"
-path="res://.godot/imported/ScoolBack.png-c478e25ba4a52328613242baec0210ad.ctex"
+uid="uid://u17wlmsdwigd"
+path="res://.godot/imported/liberybackk.png-1e3fb8facb226bdc99e585db73f9ee4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/ScoolBack.png"
-dest_files=["res://.godot/imported/ScoolBack.png-c478e25ba4a52328613242baec0210ad.ctex"]
+source_file="res://animation/liberybackk.png"
+dest_files=["res://.godot/imported/liberybackk.png-1e3fb8facb226bdc99e585db73f9ee4b.ctex"]
 
 [params]
 

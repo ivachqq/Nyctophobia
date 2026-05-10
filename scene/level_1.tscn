@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://d2qxgmfuwumma"]
 
 [ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scene/player.tscn" id="1_tw77e"]
-[ext_resource type="Texture2D" uid="uid://bl6ilonsy4ikt" path="res://scene/Gemini_Generated_Image_526cnn526cnn526c.png" id="2_70cbr"]
+[ext_resource type="Texture2D" uid="uid://bl6ilonsy4ikt" path="res://animation/Gemini_Generated_Image_526cnn526cnn526c.png" id="2_70cbr"]
 [ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="2_rpurj"]
-[ext_resource type="Texture2D" uid="uid://dcpkpyr1xosne" path="res://scene/Gemini_Generated_Image_y06p1qy06p1qy06p.png" id="3_lsoxn"]
-[ext_resource type="Texture2D" uid="uid://d4fjxe3882r7j" path="res://scene/Gemini_Generated_Image_y06p1qy06p1qy06p-edited-free (carve.photos).png" id="4_70cbr"]
-[ext_resource type="Texture2D" uid="uid://bikno24rs11a6" path="res://scene/parkBack.png" id="6_lsoxn"]
-[ext_resource type="Texture2D" uid="uid://codv854eufjrx" path="res://scene/Gemini_Generated_Image_bmyl5bmyl5bmyl5b.png" id="6_x17xt"]
-[ext_resource type="Texture2D" uid="uid://cu8hrpgrl4utj" path="res://scene/Gemini_Generated_Image_mkdpwsmkdpwsmkdp.png" id="9_c1764"]
-[ext_resource type="Texture2D" uid="uid://45yma08kx83i" path="res://scene/backscool20.png" id="10_ri5j0"]
-[ext_resource type="Texture2D" uid="uid://xirg7qp21erf" path="res://scene/Gemini_Generated_Image_526cnn526cnn526c-edited-free (carve.photos).png" id="11_1gcq6"]
+[ext_resource type="Texture2D" uid="uid://dcpkpyr1xosne" path="res://animation/Gemini_Generated_Image_y06p1qy06p1qy06p.png" id="3_lsoxn"]
+[ext_resource type="Texture2D" uid="uid://d4fjxe3882r7j" path="res://animation/Gemini_Generated_Image_y06p1qy06p1qy06p-edited-free (carve.photos).png" id="4_70cbr"]
+[ext_resource type="PackedScene" uid="uid://cscn3h4abvnem" path="res://script/mob1.tscn" id="5_1gcq6"]
+[ext_resource type="Texture2D" uid="uid://bikno24rs11a6" path="res://animation/parkBack.png" id="6_lsoxn"]
+[ext_resource type="Texture2D" uid="uid://codv854eufjrx" path="res://animation/Gemini_Generated_Image_bmyl5bmyl5bmyl5b.png" id="6_x17xt"]
+[ext_resource type="Texture2D" uid="uid://cu8hrpgrl4utj" path="res://animation/Gemini_Generated_Image_mkdpwsmkdpwsmkdp.png" id="9_c1764"]
+[ext_resource type="Texture2D" uid="uid://45yma08kx83i" path="res://animation/backscool20.png" id="10_ri5j0"]
+[ext_resource type="Texture2D" uid="uid://xirg7qp21erf" path="res://animation/Gemini_Generated_Image_526cnn526cnn526c-edited-free (carve.photos).png" id="11_1gcq6"]
 
 [node name="level_1" type="Node2D" unique_id=1515671889]
 position = Vector2(40, -3)
@@ -35,8 +36,12 @@ texture = ExtResource("9_c1764")
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="mob" parent="." unique_id=876670029 instance=ExtResource("5_1gcq6")]
+position = Vector2(1473, -69)
+
 [node name="player" parent="." unique_id=1079785783 instance=ExtResource("1_tw77e")]
-position = Vector2(329, 368)
+position = Vector2(326, 379)
+collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1574230353]
 limit_left = -2749
@@ -66,15 +71,15 @@ texture = ExtResource("11_1gcq6")
 
 [node name="portal" parent="." unique_id=413137148 instance=ExtResource("2_rpurj")]
 position = Vector2(2148, -485)
-target_level_path = "uid://ckavqb25bdaul"
+target_level_path = ""
 
 [node name="portalLiberry" parent="." unique_id=929862773 instance=ExtResource("2_rpurj")]
 position = Vector2(893, -1018)
-target_level_path = "uid://dqd7s1jqu1bq6"
+target_level_path = ""
 
 [node name="portalLiberry2" parent="." unique_id=887859018 instance=ExtResource("2_rpurj")]
 position = Vector2(893, -1018)
-target_level_path = "uid://dqd7s1jqu1bq6"
+target_level_path = ""
 
 [node name="CollisionShape2D" type="StaticBody2D" parent="." unique_id=416596424]
 
@@ -553,3 +558,5 @@ polygon = PackedVector2Array(1494, 1032, 1498, 1063, 1591, 1059, 1589, 1036)
 
 [node name="CollisionPolygon2D160" type="CollisionPolygon2D" parent="CollisionShape2D" unique_id=30719045]
 polygon = PackedVector2Array(2719, -1535, 2720, 1537, -2784, 1538, -2784, -1536, 2705, -1534, 2704, -1541, -2863, -1568, -2970, 1728, 3002, 1675, 2913, -1737, 2718, -1542)
+
+[editable path="mob"]

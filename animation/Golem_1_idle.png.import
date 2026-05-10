@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xirg7qp21erf"
-path="res://.godot/imported/Gemini_Generated_Image_526cnn526cnn526c-edited-free (carve.photos).png-5f9447c1c145de085e7b35c34887beac.ctex"
+uid="uid://u3gxx54rpd2k"
+path="res://.godot/imported/Golem_1_idle.png-eb225c815b4dcfdfe89ec92e9605afa9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/Gemini_Generated_Image_526cnn526cnn526c-edited-free (carve.photos).png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_526cnn526cnn526c-edited-free (carve.photos).png-5f9447c1c145de085e7b35c34887beac.ctex"]
+source_file="res://animation/Golem_1_idle.png"
+dest_files=["res://.godot/imported/Golem_1_idle.png-eb225c815b4dcfdfe89ec92e9605afa9.ctex"]
 
 [params]
 

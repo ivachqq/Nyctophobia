@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6ilonsy4ikt"
-path="res://.godot/imported/Gemini_Generated_Image_526cnn526cnn526c.png-3cf1c73aa73c9bf38a43ea4d6f0ae236.ctex"
+uid="uid://45yma08kx83i"
+path="res://.godot/imported/backscool20.png-4a73a3fa9699329efae2be1bf9b7e800.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/Gemini_Generated_Image_526cnn526cnn526c.png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_526cnn526cnn526c.png-3cf1c73aa73c9bf38a43ea4d6f0ae236.ctex"]
+source_file="res://animation/backscool20.png"
+dest_files=["res://.godot/imported/backscool20.png-4a73a3fa9699329efae2be1bf9b7e800.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bikno24rs11a6"
-path="res://.godot/imported/parkBack.png-87a70295f009e2e198c5bd2a651b5d44.ctex"
+uid="uid://tq2nfila3yvl"
+path="res://.godot/imported/Gemini_Generated_Image_e8ajade8ajade8aj.png-b81bb72075a53457d9cb0f936e74e6a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/parkBack.png"
-dest_files=["res://.godot/imported/parkBack.png-87a70295f009e2e198c5bd2a651b5d44.ctex"]
+source_file="res://animation/Gemini_Generated_Image_e8ajade8ajade8aj.png"
+dest_files=["res://.godot/imported/Gemini_Generated_Image_e8ajade8ajade8aj.png-b81bb72075a53457d9cb0f936e74e6a0.ctex"]
 
 [params]
 
