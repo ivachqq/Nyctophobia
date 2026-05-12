@@ -3,6 +3,8 @@ extends CharacterBody2D
 enum { DOWN, UP, LEFT, RIGHT }
 
 @onready var anim = $AnimatedSprite2D
+@onready var flashlight_sprite = $FlashLightSprite
+var flashlight_on = false
 var speed = 150
 var idle_dir = DOWN
 
@@ -22,28 +24,48 @@ func _physics_process(_delta: float) -> void:
 		idle()
 	
 	move_and_slide()
+	if flashlight_on:
+		match idle_dir:
+			DOWN:  flashlight_sprite.rotation = 0
+			UP:    flashlight_sprite.rotation = PI
+			LEFT:  flashlight_sprite.rotation = PI/2
+			RIGHT: flashlight_sprite.rotation = -PI/2
 
 func up_move():
 	anim.play("Up")
 	velocity.y = -speed
 	idle_dir = UP
+	flashlight_sprite.position.x=0.0
+	flashlight_sprite.position.y=-40.0
 
 func down_move():
 	anim.play("down")
 	velocity.y = speed
 	idle_dir = DOWN
+	flashlight_sprite.position.x=0.0
+	flashlight_sprite.position.y=60.0
 
 func left_move():
 	anim.flip_h = true
 	anim.play("Front")
 	velocity.x = -speed
 	idle_dir = LEFT
+	flashlight_sprite.position.x=-45.0
+	flashlight_sprite.position.y=10.0
 
 func right_move():
 	anim.flip_h = false
 	anim.play("Front")
 	velocity.x = speed
 	idle_dir = RIGHT
+	flashlight_sprite.position.x=45.0
+	flashlight_sprite.position.y=10.0
+	
+	
+func _input(event):
+	if event.is_action_pressed("toggle_flashlight"):
+		flashlight_on = not flashlight_on
+		flashlight_sprite.visible = flashlight_on
 
 func idle():
 	match idle_dir:
