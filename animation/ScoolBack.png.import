@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct4dhqc5bmowx"
-path="res://.godot/imported/CP_V1.0.4.png-ea7f833cbd8a2da7427cee9765937250.ctex"
+uid="uid://8mveb2c70vmr"
+path="res://.godot/imported/ScoolBack.png-041ef8308d851f7211c4e51f77f9160d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/CP_V1.0.4.png"
-dest_files=["res://.godot/imported/CP_V1.0.4.png-ea7f833cbd8a2da7427cee9765937250.ctex"]
+source_file="res://animation/ScoolBack.png"
+dest_files=["res://.godot/imported/ScoolBack.png-041ef8308d851f7211c4e51f77f9160d.ctex"]
 
 [params]
 

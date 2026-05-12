@@ -1,14 +1,37 @@
 extends CharacterBody2D
 
 enum { DOWN, UP, LEFT, RIGHT }
-
+@onready var health_bar = $CanvasLayer/HealthBar
 @onready var anim = $AnimatedSprite2D
 @onready var flashlight_sprite = $FlashLightSprite
 var flashlight_on = false
 var speed = 150
 var idle_dir = DOWN
+var max_health = 3
+var current_health = 3
+var armor = 0
 
+func _ready():
+	health_bar.max_value = max_health
+	health_bar.value = current_health
 
+func take_damage(amount: int):
+	health_bar.max_value = max_health
+	health_bar.value = current_health
+
+	var final_damage = amount - armor
+	if final_damage < 0: final_damage = 0
+	
+	current_health -= final_damage
+	health_bar.value = current_health
+	if current_health <= 0:
+		die()
+
+func die():
+	get_tree().change_scene_to_file("res://scene/world.tscn")
+	
+	
+	
 func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO 
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dp07sl4gefcbx"]
 
-[ext_resource type="Script" uid="uid://dyinut40ngu8w" path="res://scene/player.gd" id="1_hjaqi"]
-[ext_resource type="Texture2D" uid="uid://ctw6bsy1u33ua" path="res://player.png" id="2_fvtld"]
+[ext_resource type="Script" uid="uid://dyinut40ngu8w" path="res://script/player.gd" id="1_hjaqi"]
+[ext_resource type="Texture2D" uid="uid://ctw6bsy1u33ua" path="res://animation/player.png" id="2_fvtld"]
 [ext_resource type="Texture2D" uid="uid://b7g4fg2m3njvc" path="res://lanternSprite.png" id="3_fvtld"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ct4mp"]
@@ -292,16 +292,22 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
 radius = 16.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvtld"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjaqi"]
+bg_color = Color(0.92758524, 0.17594114, 0.011788184, 1)
+
 [node name="player" type="CharacterBody2D" unique_id=1079785783]
 script = ExtResource("1_hjaqi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=678990716]
+position = Vector2(-1, -12)
+scale = Vector2(1.6458334, 1.5)
 sprite_frames = SubResource("SpriteFrames_6lu7o")
 animation = &"Idle_down"
 autoplay = "Idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1860478202]
-position = Vector2(1, 8)
 shape = SubResource("CircleShape2D_hjaqi")
 
 [node name="FlashLightSprite" type="Sprite2D" parent="." unique_id=710767360]
@@ -310,3 +316,12 @@ modulate = Color(1, 1, 0.8, 1)
 self_modulate = Color(1, 1, 1, 0.4392157)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("3_fvtld")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=67024261]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=1818912784]
+offset_right = 165.0
+offset_bottom = 27.0
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_fvtld")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hjaqi")
+
