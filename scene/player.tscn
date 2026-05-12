@@ -297,6 +297,18 @@ radius = 16.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjaqi"]
 bg_color = Color(0.92758524, 0.17594114, 0.011788184, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct4mp"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.8332575, 0.92066574, 0.21684802, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
 [node name="player" type="CharacterBody2D" unique_id=1079785783]
 script = ExtResource("1_hjaqi")
 
@@ -310,12 +322,15 @@ autoplay = "Idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1860478202]
 shape = SubResource("CircleShape2D_hjaqi")
 
-[node name="FlashLightSprite" type="Sprite2D" parent="." unique_id=710767360]
+[node name="FlashLightPivot" type="Node2D" parent="." unique_id=218565582]
+
+[node name="FlashLightSprite" type="Sprite2D" parent="FlashLightPivot" unique_id=1454365283]
 visible = false
-modulate = Color(1, 1, 0.8, 1)
-self_modulate = Color(1, 1, 1, 0.4392157)
-scale = Vector2(0.08, 0.08)
+modulate = Color(1, 1, 1, 0.72156864)
+position = Vector2(0, 50)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_fvtld")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=67024261]
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=1818912784]
@@ -325,3 +340,8 @@ size_flags_horizontal = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_fvtld")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hjaqi")
 
+[node name="BatteryBar" type="ProgressBar" parent="CanvasLayer" unique_id=1829690724]
+offset_top = 54.0
+offset_right = 165.0
+offset_bottom = 81.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ct4mp")
