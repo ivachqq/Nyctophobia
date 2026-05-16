@@ -4,10 +4,27 @@ extends CharacterBody2D
 var speed = 100
 var player = null
 
+var coin_scene = preload("res://scene/coins.tscn")
 
 var target_to_attack = null
 var can_attack = true
+var hp = 3
+@onready var hp_bar = $MobHealthBar
 
+func take_damage(amount):
+	hp -= amount
+	hp_bar.value = hp
+	if hp <= 0:
+		die()
+
+func die():
+	spawn_coin()
+	queue_free()
+
+func spawn_coin():
+	var coin = coin_scene.instantiate()
+	get_parent().add_child(coin)
+	coin.global_position = global_position
 
 func _physics_process(delta: float) -> void:
 	if player:
