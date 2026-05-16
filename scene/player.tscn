@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dyinut40ngu8w" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://ctw6bsy1u33ua" path="res://animation/player.png" id="2_fvtld"]
+[ext_resource type="Texture2D" uid="uid://btal3nv8bma4d" path="res://animation/weapon03longsword.png" id="3_fvtld"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ct4mp"]
 atlas = ExtResource("2_fvtld")
@@ -147,6 +148,22 @@ region = Rect2(192, 240, 48, 48)
 atlas = ExtResource("2_fvtld")
 region = Rect2(240, 240, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvtld"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(0, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lu7o"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(48, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rkx0"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(96, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyue1"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(144, 336, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6lu7o"]
 animations = [{
 "frames": [{
@@ -286,6 +303,23 @@ animations = [{
 "loop": true,
 "name": &"Up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvtld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lu7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rkx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyue1")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
@@ -296,6 +330,9 @@ radius = 16.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjaqi"]
 bg_color = Color(0.92758524, 0.17594114, 0.011788184, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvtld"]
+radius = 52.153618
+
 [node name="player" type="CharacterBody2D" unique_id=1079785783]
 script = ExtResource("1_hjaqi")
 
@@ -303,8 +340,10 @@ script = ExtResource("1_hjaqi")
 position = Vector2(-1, -12)
 scale = Vector2(1.6458334, 1.5)
 sprite_frames = SubResource("SpriteFrames_6lu7o")
-animation = &"Idle_down"
+animation = &"attack"
 autoplay = "Idle_down"
+frame = 1
+frame_progress = 0.052902266
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1860478202]
 shape = SubResource("CircleShape2D_hjaqi")
@@ -317,3 +356,48 @@ offset_bottom = 27.0
 size_flags_horizontal = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_fvtld")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hjaqi")
+
+[node name="CoinLabel" type="Label" parent="CanvasLayer" unique_id=1306080163]
+offset_top = 27.0
+offset_right = 58.0
+offset_bottom = 54.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SwordIcon" type="TextureRect" parent="CanvasLayer" unique_id=415361252]
+modulate = Color(1, 1, 1, 0)
+offset_top = 75.0
+offset_right = 65.0
+offset_bottom = 132.0
+texture = ExtResource("3_fvtld")
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueBox" type="Panel" parent="CanvasLayer" unique_id=897638713]
+visible = false
+anchors_preset = -1
+anchor_right = 0.15190972
+offset_left = 17.0
+offset_top = 299.0
+offset_right = 241.0
+offset_bottom = 385.0
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueText" type="Label" parent="CanvasLayer/DialogueBox" unique_id=934567417]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.034883723
+anchor_right = 0.45112783
+offset_left = 29.0
+offset_top = 12.0
+offset_right = 183.0
+offset_bottom = 64.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AttackZone" type="Area2D" parent="." unique_id=1746536382]
+collision_layer = 4
+collision_mask = 4
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=829155707]
+shape = SubResource("CircleShape2D_fvtld")
+
+[connection signal="body_entered" from="AttackZone" to="." method="_on_attack_zone_body_entered"]

@@ -2,7 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scene/player.tscn" id="1_pjass"]
 [ext_resource type="Texture2D" uid="uid://ct4dhqc5bmowx" path="res://animation/CP_V1.0.4.png" id="1_w4qq1"]
+[ext_resource type="Texture2D" uid="uid://dbeeqqwdjjg12" path="res://animation/Base.png" id="2_m5mgf"]
 [ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="2_txmk2"]
+[ext_resource type="Texture2D" uid="uid://balo0k68ehuia" path="res://animation/objectsBase.png" id="5_emkrx"]
+[ext_resource type="PackedScene" uid="uid://chwnmblrbi1gp" path="res://scene/nps.tscn" id="6_0tg4p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5mgf"]
 texture = ExtResource("1_w4qq1")
@@ -613,6 +616,7 @@ sources/0 = SubResource("TileSetAtlasSource_m5mgf")
 position = Vector2(29, 38)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1939420684]
+visible = false
 tile_set = SubResource("TileSet_emkrx")
 format = 2
 layer_0/name = "0"
@@ -623,8 +627,13 @@ layer_2/name = "Layer2"
 layer_2/tile_data = PackedInt32Array(720906, 1179648, 11, 786442, 1179648, 12, 851978, 1179648, 13, 720907, 1245184, 11, 786443, 1245184, 12, 851979, 1245184, 13, 720908, 1310720, 11, 786444, 1310720, 12, 851980, 1310720, 13, -65510, 2031616, 11, 26, 2031616, 12, -65509, 2097152, 11, 27, 2097152, 12, -65508, 2031616, 11, 28, 2031616, 12, -65507, 2097152, 11, 29, 2097152, 12, -65506, 2031616, 11, 30, 2031616, 12, -65505, 2097152, 11, 31, 2097152, 12, -65504, 2031616, 11, 32, 2031616, 12, -65503, 2097152, 11, 33, 2097152, 12, 131097, 1638400, 8, 131098, 1638400, 8, 131099, 1638400, 8, 131100, 1638400, 8, 131101, 1638400, 8, 131102, 1638400, 8, 131103, 1638400, 8, 131104, 1638400, 8, 131105, 1638400, 8, 131107, 2031616, 8, 131095, 2031616, 8)
 layer_3/name = "Layer3"
 
+[node name="Base" type="Sprite2D" parent="." unique_id=1561274484]
+position = Vector2(304.49997, 136)
+scale = Vector2(0.24219316, 0.22656251)
+texture = ExtResource("2_m5mgf")
+
 [node name="player" parent="." unique_id=1079785783 instance=ExtResource("1_pjass")]
-position = Vector2(25.999998, 13.999999)
+position = Vector2(514, 146)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=790593262]
 zoom = Vector2(2.5, 2.5)
@@ -634,9 +643,37 @@ limit_right = 669
 limit_bottom = 350
 
 [node name="portal" parent="." unique_id=413137148 instance=ExtResource("2_txmk2")]
-position = Vector2(170, 187)
+position = Vector2(492, 93)
+target_door_name = "SpawnFromBase"
+
+[node name="ObjectsBase" type="Sprite2D" parent="." unique_id=360449152]
+position = Vector2(304.49997, 135.99998)
+scale = Vector2(0.24219315, 0.22656247)
+texture = ExtResource("5_emkrx")
 
 [node name="collision" type="StaticBody2D" parent="." unique_id=789497937]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision" unique_id=625935990]
-polygon = PackedVector2Array(-32, -32, 640, -31, 638, 312, -32, 311, -32, -27, -47, -27, -46, 349, 665, 343, 671, -77, -48, -75, -47, -29, -35, -29, -32, -29)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collision" unique_id=909968594]
+polygon = PackedVector2Array(571, 141, 637, 297, 637, 309, 584, 309, 584, 283, 478, 283, 477, 291, 420, 292, 420, 287, 367, 287, 367, 308, 252, 308, 251, 282, 199, 282, 199, 286, 122, 286, 122, 293, 74, 293, 74, 310, -29, 310, -29, 293, -11, 293, 21, 239, 21, 218, 26, 218, 52, 163, 58, 145, 177, 145, 208, 146, 210, 141, 220, 140, 225, 143, 230, 142, 234, 142, 238, 131, 377, 129, 380, 137, 384, 141, 391, 141, 397, 137, 398, 132, 400, 130, 407, 130, 408, 142, 468, 143, 469, 130, 482, 130, 482, 83, 533, 83, 533, 126, 536, 128, 538, 132, 541, 131, 546, 131, 549, 150, 568, 150, 567, 127, 564, 32, -1, 56, -82, 334, 722, 342, 600, 47)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision" unique_id=265213320]
+polygon = PackedVector2Array(446, 190, 489, 189, 486, 249, 486, 259, 490, 266, 488, 266, 487, 263, 451, 262, 451, 269, 446, 271, 443, 268, 443, 266, 444, 254)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="collision" unique_id=2066254509]
+polygon = PackedVector2Array(410, 190, 431, 190, 433, 193, 433, 207, 430, 207, 433, 218, 431, 218, 427, 207, 411, 207, 409, 215, 405, 211, 407, 204)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="collision" unique_id=908249363]
+polygon = PackedVector2Array(409, 224, 430, 224, 432, 227, 432, 239, 430, 242, 432, 253, 429, 254, 426, 241, 410, 242, 407, 254, 405, 254, 407, 241)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="collision" unique_id=319902737]
+polygon = PackedVector2Array(523, 190, 544, 189, 546, 201, 545, 206, 546, 214, 544, 215, 542, 206, 525, 207, 522, 219, 521, 216, 522, 207)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="collision" unique_id=1339604554]
+polygon = PackedVector2Array(528, 226, 546, 225, 549, 237, 545, 240, 547, 246, 545, 247, 543, 242, 526, 243, 527, 246, 525, 249, 525, 243)
+
+[node name="Area2D" parent="." unique_id=602187846 instance=ExtResource("6_0tg4p")]
+position = Vector2(69, 247)
+collision_mask = 3
+
+[node name="SpawnFromWorld" type="Marker2D" parent="." unique_id=2135217283]
+position = Vector2(514, 160)

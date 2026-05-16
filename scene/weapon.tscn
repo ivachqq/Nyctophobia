@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dqii8jfppc3le"]
+
+[ext_resource type="Script" uid="uid://dpsobfiec5fjn" path="res://weapon.gd" id="1_kchcj"]
+[ext_resource type="Texture2D" uid="uid://btal3nv8bma4d" path="res://animation/weapon03longsword.png" id="2_1df6x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_urpyb"]
+
+[node name="Area2D" type="Area2D" unique_id=1255259538]
+collision_mask = 2
+script = ExtResource("1_kchcj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=949224232]
+texture = ExtResource("2_1df6x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2114968740]
+shape = SubResource("CircleShape2D_urpyb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
