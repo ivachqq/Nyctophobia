@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var book_icon = $CanvasLayer/BookIcon
+
 enum { DOWN, UP, LEFT, RIGHT }
 @onready var health_bar = $CanvasLayer/HealthBar
 @onready var anim = $AnimatedSprite2D
@@ -47,9 +49,6 @@ func attack():
 		is_attacking = false
 		$AttackZone.monitoring = false
 		
-#func _ready():
-	#health_bar.max_value = max_health
-	#health_bar.value = current_health
 func _ready():
 	coins = Global.coins
 	has_sword = Global.has_sword
@@ -58,6 +57,10 @@ func _ready():
 	health_bar.max_value = max_health
 	health_bar.value = current_health
 	update_ui()
+	
+	if Global.has_book:
+		book_icon.modulate.a = 1.0
+	
 
 	if Global.target_door_name != "":
 		var spawn_point = get_tree().current_scene.find_child(Global.target_door_name, true, false)
@@ -68,6 +71,7 @@ func take_damage(amount: int):
 	health_bar.max_value = max_health
 	health_bar.value = current_health
 
+	$Camera2D.shake(15.0)
 	var final_damage = amount - armor
 	if final_damage < 0: final_damage = 0
 	
@@ -78,32 +82,26 @@ func take_damage(amount: int):
 	
 	if current_health <= 0:
 		die()
-#func take_damage(amount: int):
-	#health_bar.max_value = max_health
-	#health_bar.value = current_health
-	#var final_damage = amount - armor
-	#if final_damage < 0: final_damage = 0
-	#
-	#current_health -= final_damage
-	#health_bar.value = current_health
-	#if current_health <= 0:
-		#die()
+
+		
 func die():
-	Global.current_health = max_health 
+	Global.coins = 0
+	Global.current_health = max_health
+	Global.target_door_name = ""
+	Global.has_sword = false
+	Global.has_book = false
 	get_tree().change_scene_to_file("res://scene/world.tscn")
-#func die():
-	#get_tree().change_scene_to_file("res://scene/world.tscn")
+
 func update_ui():
+	
+	if Global.has_book:
+		book_icon.modulate.a = 1.0
 	coin_label.text = "Coins: " + str(coins)
 	if has_sword:
 		sword_icon.modulate.a = 1.0
 	
 	Global.coins = coins
 	Global.has_sword = has_sword
-#func update_ui():
-	#coin_label.text = "Coins: " + str(coins)
-	#if has_sword:
-		#sword_icon.modulate.a = 1.0
 	
 func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO 
@@ -179,7 +177,3 @@ func hide_dialogue():
 
 func show_dialogue(text_to_show: String):
 	start_dialogue([text_to_show])
-
-func _on_attack_zone_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		body.take_damage(1)

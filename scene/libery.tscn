@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scene/player.tscn" id="2_2ya1j"]
 [ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="3_avwpl"]
 [ext_resource type="Texture2D" uid="uid://u17wlmsdwigd" path="res://animation/liberybackk.png" id="4_2ya1j"]
+[ext_resource type="Texture2D" uid="uid://crgj0d5b5rire" path="res://animation/book.png" id="5_avwpl"]
+[ext_resource type="PackedScene" uid="uid://bmll184rsv0f0" path="res://scene/quest_item.tscn" id="6_sthxy"]
 
 [node name="libery" type="Node2D" unique_id=83393765]
 
@@ -17,6 +19,7 @@ position = Vector2(719, 581)
 
 [node name="portal" parent="." unique_id=413137148 instance=ExtResource("3_avwpl")]
 position = Vector2(753, 610)
+target_door_name = "SpawnFromLibery"
 
 [node name="Liberybackk" type="Sprite2D" parent="." unique_id=370370054]
 position = Vector2(575.49994, 323.00003)
@@ -57,3 +60,20 @@ polygon = PackedVector2Array(489, 249, 473, 237, 574, 182, 592, 196)
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="CollisionShape2D" unique_id=2001552665]
 polygon = PackedVector2Array(616, 361, 612, 303, 765, 273, 780, 288, 621, 371, 650, 378, 653, 366, 773, 360, 780, 359, 778, 367, 656, 377, 653, 380, 649, 380, 644, 380, 636, 379, 628, 378, 619, 376, 614, 375, 615, 361)
+
+[node name="Book" type="Sprite2D" parent="CollisionShape2D" unique_id=346794363]
+visible = false
+position = Vector2(550, 200.5)
+scale = Vector2(0.038999997, 0.0385)
+texture = ExtResource("5_avwpl")
+
+[node name="QuestItem" parent="." unique_id=1649086472 instance=ExtResource("6_sthxy")]
+
+[node name="Sprite2D" parent="QuestItem" index="0" unique_id=245574874]
+position = Vector2(551, 202)
+scale = Vector2(0.04, 0.04)
+
+[node name="CollisionShape2D" parent="QuestItem" index="1" unique_id=1102266922]
+position = Vector2(521, 180)
+
+[editable path="QuestItem"]

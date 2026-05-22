@@ -17,6 +17,11 @@ func take_damage(amount):
 	if hp <= 0:
 		die()
 
+
+func _ready() -> void:
+	hp_bar.max_value = 3
+	hp_bar.value = hp
+
 func die():
 	spawn_coin()
 	queue_free()
