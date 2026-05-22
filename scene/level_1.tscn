@@ -8,10 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://cscn3h4abvnem" path="res://scene/mob1.tscn" id="5_1gcq6"]
 [ext_resource type="Texture2D" uid="uid://bikno24rs11a6" path="res://animation/parkBack.png" id="6_lsoxn"]
 [ext_resource type="Texture2D" uid="uid://codv854eufjrx" path="res://animation/Gemini_Generated_Image_bmyl5bmyl5bmyl5b.png" id="6_x17xt"]
+[ext_resource type="Script" uid="uid://3l6sqgp64th7" path="res://scene/shake_camera.gd" id="7_tlh70"]
 [ext_resource type="Texture2D" uid="uid://cu8hrpgrl4utj" path="res://animation/Gemini_Generated_Image_mkdpwsmkdpwsmkdp.png" id="9_c1764"]
 [ext_resource type="Texture2D" uid="uid://45yma08kx83i" path="res://animation/backscool20.png" id="10_ri5j0"]
 [ext_resource type="Texture2D" uid="uid://xirg7qp21erf" path="res://animation/Gemini_Generated_Image_526cnn526cnn526c-edited-free (carve.photos).png" id="11_1gcq6"]
 [ext_resource type="PackedScene" uid="uid://dqii8jfppc3le" path="res://scene/weapon.tscn" id="12_a2j0k"]
+[ext_resource type="Script" uid="uid://prns8lw4qgs6" path="res://scene/mob_spawner.gd" id="13_i3j6g"]
+[ext_resource type="Script" uid="uid://c50c1fpb8rfne" path="res://scene/sword_randomizer.gd" id="15_hs4ge"]
 
 [node name="level_1" type="Node2D" unique_id=1515671889]
 position = Vector2(40, -3)
@@ -41,7 +44,6 @@ offset_bottom = 23.0
 position = Vector2(1473, -69)
 
 [node name="MobHealthBar" parent="mob" index="4" unique_id=208786265]
-top_level = false
 offset_left = -41.0
 offset_top = -33.0
 offset_right = 45.0
@@ -56,6 +58,7 @@ limit_left = -2749
 limit_top = -1539
 limit_right = 2760
 limit_bottom = 1526
+script = ExtResource("7_tlh70")
 
 [node name="ParkBack" type="Sprite2D" parent="." unique_id=1742769747]
 position = Vector2(-1407.4999, 771.49994)
@@ -84,7 +87,7 @@ target_door_name = "SpawnFromWorld"
 
 [node name="portalLiberry" parent="." unique_id=929862773 instance=ExtResource("2_rpurj")]
 position = Vector2(893, -1018)
-target_level_path = ""
+target_level_path = "uid://dqd7s1jqu1bq6"
 
 [node name="portalLiberry2" parent="." unique_id=887859018 instance=ExtResource("2_rpurj")]
 position = Vector2(893, -1018)
@@ -568,11 +571,41 @@ polygon = PackedVector2Array(1494, 1032, 1498, 1063, 1591, 1059, 1589, 1036)
 [node name="CollisionPolygon2D160" type="CollisionPolygon2D" parent="CollisionShape2D" unique_id=30719045]
 polygon = PackedVector2Array(2719, -1535, 2720, 1537, -2784, 1538, -2784, -1536, 2705, -1534, 2704, -1541, -2863, -1568, -2970, 1728, 3002, 1675, 2913, -1737, 2718, -1542)
 
-[node name="Area2D" parent="." unique_id=1255259538 instance=ExtResource("12_a2j0k")]
-position = Vector2(352, 379)
+[node name="SwordItem" parent="." unique_id=1255259538 instance=ExtResource("12_a2j0k")]
+position = Vector2(862, -9)
+
 
 [node name="SpawnFromBase" type="Marker2D" parent="." unique_id=71132853]
 position = Vector2(2164, -400)
+
+[node name="MobSpawner" type="Node2D" parent="." unique_id=1779725744]
+script = ExtResource("13_i3j6g")
+mob_scene = ExtResource("5_1gcq6")
+
+[node name="SpawnTimer" type="Timer" parent="MobSpawner" unique_id=1499888261]
+wait_time = 2.0
+autostart = true
+
+[node name="SpawnFromLibery" type="Marker2D" parent="." unique_id=893050885]
+position = Vector2(909, -955)
+
+[node name="SwordSpawnPoints" type="Node2D" parent="." unique_id=1401103431]
+script = ExtResource("15_hs4ge")
+
+[node name="Marker2D" type="Marker2D" parent="SwordSpawnPoints" unique_id=1901270357]
+position = Vector2(541, 1060)
+
+[node name="Marker2D2" type="Marker2D" parent="SwordSpawnPoints" unique_id=426347311]
+position = Vector2(1680, 1008)
+
+[node name="Marker2D3" type="Marker2D" parent="SwordSpawnPoints" unique_id=2086463792]
+position = Vector2(1493, -1032)
+
+[node name="Marker2D4" type="Marker2D" parent="SwordSpawnPoints" unique_id=30330644]
+position = Vector2(-2012, -846)
+
+[node name="Marker2D5" type="Marker2D" parent="SwordSpawnPoints" unique_id=1056640848]
+position = Vector2(-2013, 726)
 
 [editable path="mob"]
 [editable path="player"]

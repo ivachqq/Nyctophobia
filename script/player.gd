@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var book_icon = $CanvasLayer/BookIcon
+
 enum { DOWN, UP, LEFT, RIGHT }
 @onready var health_bar = $CanvasLayer/HealthBar
 @onready var battery_bar = $CanvasLayer/BatteryBar
@@ -35,6 +37,30 @@ var current_line_index: int = 0
 @onready var dialogue_box = $CanvasLayer/DialogueBox
 @onready var dialogue_text = $CanvasLayer/DialogueBox/DialogueText
 
+
+func _input(event: InputEvent) -> void:
+	if dialogue_box.visible:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			current_line_index += 1
+			show_current_line()
+			get_viewport().set_input_as_handled()
+			return
+	if event.is_action_pressed("attack") and has_sword:
+		attack()
+func attack():
+	if has_sword and not is_attacking:
+		is_attacking = true
+		anim.play("attack")
+		$AttackZone.monitoring = true
+		await get_tree().create_timer(0.1).timeout
+		var bodies = $AttackZone.get_overlapping_bodies()
+		for body in bodies:
+			if body.has_method("take_damage") and body != self:
+				body.take_damage(1)
+		await get_tree().create_timer(0.3).timeout
+		is_attacking = false
+		$AttackZone.monitoring = false
+
 func _ready():
 	# Загружаем глобальные данные
 	coins = Global.coins
@@ -52,12 +78,15 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	update_ui()
+	if Global.has_book:
+		book_icon.modulate.a = 1.0
 
 	# Если нужно телепортироваться к определённой двери
 	if Global.target_door_name != "":
 		var spawn_point = get_tree().current_scene.find_child(Global.target_door_name, true, false)
 		if spawn_point:
 			global_position = spawn_point.global_position
+
 
 func check_flashlight_hit():
 	if not flashlight_on:
@@ -72,6 +101,8 @@ func check_flashlight_hit():
 			if body.has_method("apply_flashlight_stun"):
 				body.apply_flashlight_stun()
 func take_damage(amount: int):
+	$Camera2D.shake(15.0)
+
 	var final_damage = amount - armor
 	if final_damage < 0:
 		final_damage = 0
@@ -81,20 +112,27 @@ func take_damage(amount: int):
 	if current_health <= 0:
 		die()
 
+
+
 func die():
+	Global.coins = 0
 	Global.current_health = max_health
+	Global.target_door_name = ""
+	Global.has_sword = false
+	Global.has_book = false
+
 	get_tree().change_scene_to_file("res://scene/world.tscn")
 
 func update_ui():
+	if Global.has_book:
+		book_icon.modulate.a = 1.0
 	coin_label.text = "Coins: " + str(coins)
 	if has_sword:
 		sword_icon.modulate.a = 1.0
 	Global.coins = coins
 	Global.has_sword = has_sword
 
-func _physics_process(delta: float) -> void:
-	velocity = Vector2.ZERO
-
+func _physics_process(_delta: float) -> void:
 	if not is_attacking:
 		if Input.is_action_pressed("up"):
 			up_move()
