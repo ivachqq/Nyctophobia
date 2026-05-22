@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ctw6bsy1u33ua" path="res://animation/player.png" id="2_fvtld"]
 [ext_resource type="Texture2D" uid="uid://b7g4fg2m3njvc" path="res://lanternSprite.png" id="3_fvtld"]
 [ext_resource type="Texture2D" uid="uid://btal3nv8bma4d" path="res://animation/weapon03longsword.png" id="4_fvtld"]
+[ext_resource type="AudioStream" uid="uid://c62vnoyfstvha" path="res://sounds/lanternSound.mp3" id="5_s4jxa"]
+[ext_resource type="AudioStream" uid="uid://bhcfcgsn5nwta" path="res://sounds/swordSound.mp3" id="6_oh5ij"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ct4mp"]
 atlas = ExtResource("2_fvtld")
@@ -431,5 +433,11 @@ monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=829155707]
 shape = SubResource("CircleShape2D_fvtld")
+
+[node name="lanternSound" type="AudioStreamPlayer" parent="." unique_id=1864363086]
+stream = ExtResource("5_s4jxa")
+
+[node name="swordSound" type="AudioStreamPlayer" parent="." unique_id=1685548626]
+stream = ExtResource("6_oh5ij")
 
 [connection signal="body_entered" from="AttackZone" to="." method="_on_attack_zone_body_entered"]

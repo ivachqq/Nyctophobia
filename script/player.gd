@@ -6,6 +6,8 @@ enum { DOWN, UP, LEFT, RIGHT }
 @onready var anim = $AnimatedSprite2D
 @onready var flashlight_pivot = $FlashLightPivot
 @onready var flashlight_sprite = $FlashLightPivot/FlashLightSprite
+@onready var flashlight_sound = $lanternSound
+@onready var sword_sound = $swordSound
 var flashlight_on = false
 var speed = 150
 var idle_dir = DOWN
@@ -163,6 +165,7 @@ func _input(event):
 			return
 		flashlight_on = not flashlight_on
 		flashlight_sprite.visible = flashlight_on
+		flashlight_sound.play()
 		if flashlight_on:
 			update_flashlight_angle()
 
@@ -173,6 +176,7 @@ func _input(event):
 func attack():
 	if has_sword and not is_attacking:
 		is_attacking = true
+		sword_sound.play()
 		anim.play("attack")
 		$AttackZone.monitoring = true
 

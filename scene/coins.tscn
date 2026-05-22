@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bh3r7aanymm3m" path="res://coins.gd" id="1_1rf88"]
 [ext_resource type="Texture2D" uid="uid://c5r5o1iamxxa8" path="res://animation/coin.png" id="2_4aqvq"]
+[ext_resource type="AudioStream" uid="uid://d63ual16oo3h" path="res://sounds/coinsSound.mp3" id="3_4aqvq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_www4h"]
 radius = 8.062258
@@ -21,5 +22,8 @@ texture = ExtResource("2_4aqvq")
 light_mask = 7
 visibility_layer = 7
 shape = SubResource("CircleShape2D_www4h")
+
+[node name="coinGetSound" type="AudioStreamPlayer" parent="." unique_id=1787063265]
+stream = ExtResource("3_4aqvq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
