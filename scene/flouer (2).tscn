@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://detifoudkyd7f"]
+
+[ext_resource type="Texture2D" uid="uid://rqfoccg1kh0j" path="res://animation/Gemini_Generated_Image_crllqlcrllqlcrll.png" id="1_y6cxv"]
+[ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scene/player.tscn" id="2_dres3"]
+[ext_resource type="Texture2D" uid="uid://kg5hvwdhpl57" path="res://animation/backFlouer.png" id="3_5716g"]
+[ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="4_kiijh"]
+
+[node name="Node2D" type="Node2D" unique_id=555292375]
+
+[node name="GeminiGeneratedImageCrllqlcrllqlcrll" type="Sprite2D" parent="." unique_id=496111473]
+position = Vector2(578, 322.00003)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("1_y6cxv")
+
+[node name="player" parent="." unique_id=1079785783 instance=ExtResource("2_dres3")]
+position = Vector2(727, 399)
+
+[node name="BackFlouer" type="Sprite2D" parent="." unique_id=303355770]
+position = Vector2(578.00006, 322.00003)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("3_5716g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=35314170]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=436952024]
+polygon = PackedVector2Array(767, 486, 929, 573, 984, 546, 813, 457)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1231744882]
+polygon = PackedVector2Array(818, 641, 1090, 501, 944, 417, 966, 397, 875, 344, 871, 357, 867, 359, 855, 360, 849, 357, 842, 352, 843, 344, 843, 328, 821, 316, 820, 329, 818, 336, 810, 342, 800, 343, 791, 340, 786, 335, 784, 327, 784, 317, 774, 312, 764, 316, 763, 324, 756, 328, 751, 326, 751, 269, 752, 243, 674, 279, 675, 362, 688, 370, 689, 395, 685, 402, 678, 406, 669, 407, 662, 404, 653, 401, 651, 395, 650, 379, 632, 388, 459, 289, 356, 337, 337, 327, 189, 400, 555, 603, 539, 618, 563, 635, 597, 624, 620, 640, 455, 640, 96, 428, 307, 204, 677, 185, 906, 195, 1102, 423, 1122, 515, 986, 596)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1756212873]
+polygon = PackedVector2Array(623, 635, 623, 642, 813, 642, 814, 634)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=458506064]
+polygon = PackedVector2Array(414, 343, 563, 433, 608, 410, 452, 326)
+
+[node name="portal" parent="." unique_id=413137148 instance=ExtResource("4_kiijh")]
+position = Vector2(704, 307)
+target_door_name = "FromFlauer"

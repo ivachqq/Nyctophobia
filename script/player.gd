@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var book_icon = $CanvasLayer/BookIcon
+@onready var banka_icon = $CanvasLayer/BankaIcon
+@onready var zvetok_icon = $CanvasLayer/zvetokIcon
 
 enum { DOWN, UP, LEFT, RIGHT }
 @onready var health_bar = $CanvasLayer/HealthBar
@@ -57,6 +59,10 @@ func _ready():
 	update_ui()
 	if Global.has_book:
 		book_icon.modulate.a = 1.0
+	if Global.has_banka:
+		banka_icon.modulate.a = 1.0
+	if Global.has_zvetok:
+		zvetok_icon.modulate.a = 1.0
 
 	# Если нужно телепортироваться к определённой двери
 	if Global.target_door_name != "":
@@ -189,12 +195,17 @@ func die():
 	Global.target_door_name = ""
 	Global.has_sword = false
 	Global.has_book = false
-
+	Global.has_banka = false
+	Global.has_zvetok = false
 	get_tree().change_scene_to_file("res://scene/world.tscn")
 
 func update_ui():
 	if Global.has_book:
 		book_icon.modulate.a = 1.0
+	if Global.has_banka:
+		banka_icon.modulate.a = 1.0
+	if Global.has_zvetok:
+		zvetok_icon.modulate.a = 1.0
 	coin_label.text = "Coins: " + str(coins)
 	if has_sword:
 		sword_icon.modulate.a = 1.0

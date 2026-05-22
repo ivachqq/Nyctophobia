@@ -5,4 +5,6 @@ var has_sword: bool = false
 var current_health: int = 3
 var target_door_name: String = ""
 var has_book: bool = false
+var has_banka: bool = false
+var has_zvetok: bool = false
 var talked: int = 0

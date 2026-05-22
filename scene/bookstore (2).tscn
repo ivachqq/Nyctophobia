@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://6jkkk47fq77k"]
+
+[ext_resource type="Texture2D" uid="uid://c6bl7stsljc6n" path="res://animation/Gemini_Generated_Image_y0ewyly0ewyly0ew.png" id="1_sid4e"]
+[ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scene/player.tscn" id="2_nwnxe"]
+[ext_resource type="Texture2D" uid="uid://bsb25kni2r4n8" path="res://animation/44.png" id="3_g5nwu"]
+[ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="4_euage"]
+
+[node name="Node2D" type="Node2D" unique_id=192172232]
+
+[node name="GeminiGeneratedImageY0Ewyly0Ewyly0Ew" type="Sprite2D" parent="." unique_id=1786531944]
+position = Vector2(578.00006, 322.00003)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("1_sid4e")
+
+[node name="player" parent="." unique_id=1079785783 instance=ExtResource("2_nwnxe")]
+position = Vector2(774, 381)
+
+[node name="44" type="Sprite2D" parent="." unique_id=1289381624]
+position = Vector2(578, 322.00003)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("3_g5nwu")
+
+[node name="portal" parent="." unique_id=413137148 instance=ExtResource("4_euage")]
+position = Vector2(702, 311)
+target_door_name = "frombookstore2"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1361541498]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=312543249]
+polygon = PackedVector2Array(771, 313, 924, 387, 878, 420, 977, 475, 1033, 446, 1040, 454, 1039, 463, 1034, 472, 1078, 497, 1082, 499, 819, 639, 351, 635, 93, 503, 215, 432, 185, 407, 445, 270, 647, 379, 665, 372, 659, 224, 381, 185, 47, 482, 62, 588, 348, 654, 984, 641, 1216, 414, 766, 254)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=161578933]
+polygon = PackedVector2Array(771, 605, 810, 631, 848, 612, 813, 591, 771, 594, 762, 604, 766, 608)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=28320583]
+polygon = PackedVector2Array(333, 435, 393, 474, 521, 402, 451, 368)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1735519700]
+polygon = PackedVector2Array(175, 531, 295, 594, 351, 558, 243, 499)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1414814341]
+polygon = PackedVector2Array(517, 632, 566, 609, 491, 551, 448, 582, 413, 558, 356, 595, 395, 620, 435, 609, 476, 633)

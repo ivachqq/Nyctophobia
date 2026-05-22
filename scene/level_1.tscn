@@ -20,7 +20,8 @@
 position = Vector2(40, -3)
 
 [node name="miniCity" type="Sprite2D" parent="." unique_id=2053437460]
-position = Vector2(1343, 769)
+position = Vector2(1343.5, 769)
+scale = Vector2(1.0003633, 1)
 texture = ExtResource("2_70cbr")
 
 [node name="cinema" type="Sprite2D" parent="." unique_id=380447919]
@@ -40,15 +41,6 @@ texture = ExtResource("9_c1764")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="mob" parent="." unique_id=876670029 instance=ExtResource("5_1gcq6")]
-position = Vector2(1473, -69)
-
-[node name="MobHealthBar" parent="mob" index="4" unique_id=208786265]
-offset_left = -41.0
-offset_top = -33.0
-offset_right = 45.0
-offset_bottom = -24.0
-
 [node name="player" parent="." unique_id=1079785783 instance=ExtResource("1_tw77e")]
 position = Vector2(326, 379)
 collision_layer = 2
@@ -60,24 +52,49 @@ limit_right = 2760
 limit_bottom = 1526
 script = ExtResource("7_tlh70")
 
+[node name="mob" parent="player" unique_id=876670029 instance=ExtResource("5_1gcq6")]
+position = Vector2(1147, -448)
+
+[node name="MobHealthBar" parent="player/mob" index="5" unique_id=208786265]
+offset_left = -41.0
+offset_top = -33.0
+offset_right = 45.0
+offset_bottom = -24.0
+
+[node name="MobSpawner" type="Node2D" parent="." unique_id=1779725744]
+script = ExtResource("13_i3j6g")
+mob_scene = ExtResource("5_1gcq6")
+
+[node name="SpawnTimer" type="Timer" parent="MobSpawner" unique_id=1499888261]
+wait_time = 2.0
+autostart = true
+
 [node name="ParkBack" type="Sprite2D" parent="." unique_id=1742769747]
+modulate = Color(1, 1, 1, 0.7058824)
+z_index = 1
 position = Vector2(-1407.4999, 771.49994)
 scale = Vector2(2.1476562, 2.192582)
 texture = ExtResource("6_lsoxn")
 
 [node name="Backscool" type="Sprite2D" parent="." unique_id=1816565661]
+modulate = Color(1, 1, 1, 0.7058824)
+z_index = 1
 position = Vector2(1344.5001, -767)
 scale = Vector2(2.1492186, 2.1512604)
 texture = ExtResource("10_ri5j0")
 
 [node name="cinemaBack" type="Sprite2D" parent="." unique_id=1342603775]
+modulate = Color(1, 1, 1, 0.7058824)
+z_index = 1
 position = Vector2(-1407, -767)
 scale = Vector2(2.15, 2.1512606)
 texture = ExtResource("4_70cbr")
 
 [node name="GeminiGeneratedImage526Cnn526Cnn526cEditedFree(carve_photos)" type="Sprite2D" parent="." unique_id=800512591]
-position = Vector2(1342, 777)
-scale = Vector2(2.1484375, 2.1288517)
+modulate = Color(1, 1, 1, 0.7058824)
+z_index = 1
+position = Vector2(1343, 769)
+scale = Vector2(2.15, 2.1512606)
 texture = ExtResource("11_1gcq6")
 
 [node name="portal" parent="." unique_id=413137148 instance=ExtResource("2_rpurj")]
@@ -578,14 +595,6 @@ position = Vector2(862, -9)
 [node name="SpawnFromBase" type="Marker2D" parent="." unique_id=71132853]
 position = Vector2(2164, -400)
 
-[node name="MobSpawner" type="Node2D" parent="." unique_id=1779725744]
-script = ExtResource("13_i3j6g")
-mob_scene = ExtResource("5_1gcq6")
-
-[node name="SpawnTimer" type="Timer" parent="MobSpawner" unique_id=1499888261]
-wait_time = 2.0
-autostart = true
-
 [node name="SpawnFromLibery" type="Marker2D" parent="." unique_id=893050885]
 position = Vector2(909, -955)
 
@@ -607,5 +616,142 @@ position = Vector2(-2012, -846)
 [node name="Marker2D5" type="Marker2D" parent="SwordSpawnPoints" unique_id=1056640848]
 position = Vector2(-2013, 726)
 
-[editable path="mob"]
+[node name="portal2" parent="." unique_id=665395708 instance=ExtResource("2_rpurj")]
+position = Vector2(752, -461)
+target_level_path = "uid://irb2h7gdtyqd"
+
+[node name="portal" parent="portal2" unique_id=2137861075 instance=ExtResource("2_rpurj")]
+
+[node name="FromScool" type="Marker2D" parent="." unique_id=1424706851]
+position = Vector2(766, -383)
+
+[node name="portal3" parent="." unique_id=1591924259 instance=ExtResource("2_rpurj")]
+position = Vector2(2064, 515)
+target_level_path = "uid://dwfyubq6oqudn"
+
+[node name="FromKafe" type="Marker2D" parent="." unique_id=1544357883]
+position = Vector2(2079, 602)
+
+[node name="portal4" parent="." unique_id=937887309 instance=ExtResource("2_rpurj")]
+position = Vector2(2146, 1058)
+target_level_path = "uid://dkygeul3cyxjd"
+
+[node name="FromFlauer" type="Marker2D" parent="." unique_id=825602539]
+position = Vector2(2153, 1148)
+
+[node name="portal5" parent="." unique_id=433798709 instance=ExtResource("2_rpurj")]
+position = Vector2(-686, -1017)
+target_level_path = "uid://cji2etg4n1bjo"
+
+[node name="FromKafe2" type="Marker2D" parent="." unique_id=1812017055]
+position = Vector2(-670, -959)
+
+[node name="fromFlooo" type="Marker2D" parent="." unique_id=80044314]
+position = Vector2(-590, -401)
+
+[node name="portal6" parent="." unique_id=1454434305 instance=ExtResource("2_rpurj")]
+position = Vector2(-605, -483)
+target_level_path = "uid://bwp2v44tdnph7"
+
+[node name="portal7" parent="." unique_id=1500927017 instance=ExtResource("2_rpurj")]
+position = Vector2(2054, -997)
+target_level_path = "uid://ggrbvbmpx01s"
+
+[node name="fromTemp1" type="Marker2D" parent="." unique_id=2087450183]
+position = Vector2(2070, -928)
+
+[node name="portal8" parent="." unique_id=1295602366 instance=ExtResource("2_rpurj")]
+position = Vector2(-1140, -1022)
+target_level_path = "uid://cm8lgs0s7mfi"
+
+[node name="fromTemp2" type="Marker2D" parent="." unique_id=452710639]
+position = Vector2(-1124, -960)
+
+[node name="portal9" parent="." unique_id=2053509431 instance=ExtResource("2_rpurj")]
+position = Vector2(-1852, -967)
+target_level_path = "uid://bteqx68p18jlj"
+
+[node name="fromTemp3" type="Marker2D" parent="." unique_id=574712509]
+position = Vector2(-1850, -894)
+
+[node name="portal10" parent="." unique_id=869199953 instance=ExtResource("2_rpurj")]
+position = Vector2(-2069, -465)
+target_level_path = "uid://4ef8vx2d7278"
+
+[node name="fromTemp4" type="Marker2D" parent="." unique_id=631447569]
+position = Vector2(-2056, -384)
+
+[node name="portal11" parent="." unique_id=310924823 instance=ExtResource("2_rpurj")]
+position = Vector2(-2232, -468)
+target_level_path = "uid://cujnf4ixkcsv5"
+
+[node name="fromTemp5" type="Marker2D" parent="." unique_id=1597920236]
+position = Vector2(-2223, -400)
+
+[node name="portal12" parent="." unique_id=1357734883 instance=ExtResource("2_rpurj")]
+position = Vector2(1854, -459)
+target_level_path = "uid://bs4acy15531e1"
+
+[node name="fromTemp6" type="Marker2D" parent="." unique_id=979899187]
+
+[node name="portal13" parent="." unique_id=474512904 instance=ExtResource("2_rpurj")]
+position = Vector2(528, 514)
+target_level_path = "uid://5pxoj52hm7yt"
+
+[node name="portal14" parent="." unique_id=472114089 instance=ExtResource("2_rpurj")]
+position = Vector2(761, 514)
+target_level_path = "uid://dvs2b4iw6uq7"
+
+[node name="portal15" parent="." unique_id=528800922 instance=ExtResource("2_rpurj")]
+position = Vector2(1012, 516)
+target_level_path = "uid://wfaojuqwtx6o"
+
+[node name="portal16" parent="." unique_id=701806021 instance=ExtResource("2_rpurj")]
+position = Vector2(1291, 516)
+target_level_path = "uid://bxdb6o307w3ls"
+
+[node name="portal17" parent="." unique_id=1928038218 instance=ExtResource("2_rpurj")]
+position = Vector2(1644, 533)
+target_level_path = "uid://lhixakcxhfyp"
+
+[node name="portal18" parent="." unique_id=1897783710 instance=ExtResource("2_rpurj")]
+position = Vector2(524, 956)
+target_level_path = "uid://cxnkplqeukqwm"
+
+[node name="fromhouse" type="Marker2D" parent="." unique_id=1188732606]
+position = Vector2(548, 596)
+
+[node name="fromhouse1" type="Marker2D" parent="." unique_id=592234622]
+position = Vector2(783, 612)
+
+[node name="fromhouse2" type="Marker2D" parent="." unique_id=447508765]
+position = Vector2(1027, 602)
+
+[node name="fromhouse3" type="Marker2D" parent="." unique_id=1318446922]
+position = Vector2(1298, 602)
+
+[node name="fromhouse4" type="Marker2D" parent="." unique_id=15402334]
+position = Vector2(1664, 602)
+
+[node name="fromhouse5" type="Marker2D" parent="." unique_id=367230022]
+position = Vector2(542, 1107)
+
+[node name="portal19" parent="." unique_id=659078371 instance=ExtResource("2_rpurj")]
+position = Vector2(1852, 1078)
+target_level_path = "uid://bwhcuygf4ifr1"
+
+[node name="frombookstore" type="Marker2D" parent="." unique_id=1882136576]
+position = Vector2(1861, 1152)
+
+[node name="portal20" parent="." unique_id=24602826 instance=ExtResource("2_rpurj")]
+position = Vector2(-903, -462)
+target_level_path = "uid://6jkkk47fq77k"
+
+[node name="frombookstore2" type="Marker2D" parent="." unique_id=879506863]
+position = Vector2(-887, -392)
+
+[node name="nomer1" type="Marker2D" parent="." unique_id=2111640402]
+position = Vector2(1863, -385)
+
 [editable path="player"]
+[editable path="player/mob"]
