@@ -32,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 				"Лежит в библиотке",
 		]
 			body.start_dialogue(story)
-			body.coins = 0
+			body.coins = body.coins-5
 			body.update_ui()
 			Global.talked = 2
 

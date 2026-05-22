@@ -4,14 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://ctw6bsy1u33ua" path="res://animation/player.png" id="2_fvtld"]
 [ext_resource type="Texture2D" uid="uid://b7g4fg2m3njvc" path="res://lanternSprite.png" id="3_hp4bs"]
 [ext_resource type="Texture2D" uid="uid://dd1v4myssmowq" path="res://animation/book icon2.png" id="4_ct4mp"]
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://btal3nv8bma4d" path="res://animation/weapon03longsword.png" id="4_fvtld"]
 [ext_resource type="AudioStream" uid="uid://c62vnoyfstvha" path="res://sounds/lanternSound.mp3" id="5_s4jxa"]
 [ext_resource type="AudioStream" uid="uid://bhcfcgsn5nwta" path="res://sounds/swordSound.mp3" id="6_oh5ij"]
-=======
-[ext_resource type="Texture2D" uid="uid://ds62x845q8i52" path="res://animation/banka.png" id="5_s4jxa"]
-[ext_resource type="Texture2D" uid="uid://dapwbnqyupb6w" path="res://scene/hh.png" id="6_oh5ij"]
->>>>>>> artem-branch
+[ext_resource type="Texture2D" uid="uid://ds62x845q8i52" path="res://animation/banka.png" id="7_banka"]
+[ext_resource type="Texture2D" uid="uid://dapwbnqyupb6w" path="res://scene/hh.png" id="8_zvetok"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ct4mp"]
 atlas = ExtResource("2_fvtld")
@@ -415,10 +412,10 @@ metadata/_edit_use_anchors_ = true
 visible = false
 anchors_preset = -1
 anchor_right = 0.15190972
-offset_left = 17.0
-offset_top = 299.0
-offset_right = 241.0
-offset_bottom = 385.0
+offset_left = 130.0
+offset_top = 659.0
+offset_right = 353.99997
+offset_bottom = 745.0
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogueText" type="Label" parent="CanvasLayer/DialogueBox" unique_id=934567417]
@@ -447,7 +444,7 @@ offset_left = -215.0
 offset_top = 185.0
 offset_right = 285.0
 offset_bottom = 685.0
-texture = ExtResource("5_s4jxa")
+texture = ExtResource("7_banka")
 
 [node name="zvetokIcon" type="TextureRect" parent="CanvasLayer" unique_id=1950753038]
 modulate = Color(1, 1, 1, 0)
@@ -455,7 +452,7 @@ offset_left = -327.0
 offset_top = -96.0
 offset_right = 173.0
 offset_bottom = 404.0
-texture = ExtResource("6_oh5ij")
+texture = ExtResource("8_zvetok")
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=1746536382]
 collision_layer = 4
