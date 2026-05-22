@@ -13,8 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://45yma08kx83i" path="res://animation/backscool20.png" id="10_ri5j0"]
 [ext_resource type="Texture2D" uid="uid://xirg7qp21erf" path="res://animation/Gemini_Generated_Image_526cnn526cnn526c-edited-free (carve.photos).png" id="11_1gcq6"]
 [ext_resource type="PackedScene" uid="uid://dqii8jfppc3le" path="res://scene/weapon.tscn" id="12_a2j0k"]
-[ext_resource type="Script" uid="uid://prns8lw4qgs6" path="res://scene/mob_spawner.gd" id="13_i3j6g"]
-[ext_resource type="Script" uid="uid://c50c1fpb8rfne" path="res://scene/sword_randomizer.gd" id="15_hs4ge"]
+[ext_resource type="PackedScene" uid="uid://d4cx7q4jloodo" path="res://backpack.tscn" id="13_i3j6g"]
 
 [node name="level_1" type="Node2D" unique_id=1515671889]
 position = Vector2(40, -3)
@@ -578,34 +577,9 @@ position = Vector2(862, -9)
 [node name="SpawnFromBase" type="Marker2D" parent="." unique_id=71132853]
 position = Vector2(2164, -400)
 
-[node name="MobSpawner" type="Node2D" parent="." unique_id=1779725744]
-script = ExtResource("13_i3j6g")
-mob_scene = ExtResource("5_1gcq6")
-
-[node name="SpawnTimer" type="Timer" parent="MobSpawner" unique_id=1499888261]
-wait_time = 2.0
-autostart = true
-
-[node name="SpawnFromLibery" type="Marker2D" parent="." unique_id=893050885]
-position = Vector2(909, -955)
-
-[node name="SwordSpawnPoints" type="Node2D" parent="." unique_id=1401103431]
-script = ExtResource("15_hs4ge")
-
-[node name="Marker2D" type="Marker2D" parent="SwordSpawnPoints" unique_id=1901270357]
-position = Vector2(541, 1060)
-
-[node name="Marker2D2" type="Marker2D" parent="SwordSpawnPoints" unique_id=426347311]
-position = Vector2(1680, 1008)
-
-[node name="Marker2D3" type="Marker2D" parent="SwordSpawnPoints" unique_id=2086463792]
-position = Vector2(1493, -1032)
-
-[node name="Marker2D4" type="Marker2D" parent="SwordSpawnPoints" unique_id=30330644]
-position = Vector2(-2012, -846)
-
-[node name="Marker2D5" type="Marker2D" parent="SwordSpawnPoints" unique_id=1056640848]
-position = Vector2(-2013, 726)
+[node name="Buttery" parent="." unique_id=1964916235 instance=ExtResource("13_i3j6g")]
+position = Vector2(-2237, 659)
+scale = Vector2(0.1, 0.1)
 
 [editable path="mob"]
 [editable path="player"]

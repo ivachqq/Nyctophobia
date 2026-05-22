@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var book_icon = $CanvasLayer/BookIcon
 
@@ -265,3 +266,15 @@ func hide_dialogue():
 
 func show_dialogue(text_to_show: String):
 	start_dialogue([text_to_show])
+
+# обработка сбора ресурсов
+func add_health(amount: int) -> void:
+	current_health = clampi(current_health + amount, 0, max_health)
+	health_bar.value = current_health
+	Global.current_health = current_health 
+	print("Подобрано здоровье. Текущее: ", current_health)
+
+func add_flashlight(amount: float) -> void:
+	battery = clampf(battery + amount, 0.0, battery_max)
+	battery_bar.value = battery
+	print("Подобран заряд фонарика. Текущий: ", battery)

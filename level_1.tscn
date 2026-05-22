@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://b32ua1a8ggd2p"]
+[gd_scene format=3 uid="uid://iatgo16nrfko"]
 
-[ext_resource type="Script" uid="uid://chkuxh0fac6g1" path="res://level_1.gd" id="1_3hls8"]
+[ext_resource type="Script" path="res://level_1.gd" id="1_3hls8"]
+[ext_resource type="PackedScene" uid="uid://d4cx7q4jloodo" path="res://backpack.tscn" id="2_hbghi"]
 
 [node name="Level1" type="Node2D" unique_id=800710935]
 script = ExtResource("1_3hls8")
@@ -11,3 +12,5 @@ offset_top = 126.0
 offset_right = 699.0
 offset_bottom = 317.0
 text = "LEVEL1"
+
+[node name="Buttery" parent="." unique_id=1964916235 instance=ExtResource("2_hbghi")]

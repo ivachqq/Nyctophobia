@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Nyctophobia"
-run/main_scene="uid://wtett8f2psbl"
+run/main_scene="uid://bsxpfog03r6ya"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*uid://cjwajfjedxhyy"
 Global="*uid://tmfpltu0cqaj"
+GameManager="*uid://cjwajfjedxhyy"
 
 [display]
 
