@@ -16,7 +16,7 @@ var armor = 0
 # Батарея фонарика
 var battery_max: float = 100.0
 var battery: float = battery_max
-var battery_drain_rate: float = 15.0
+var battery_drain_rate: float = 1.0
 
 # Атака и предметы
 var is_attacking = false
@@ -25,6 +25,7 @@ var coins = 0
 
 @onready var sword_icon = $CanvasLayer/SwordIcon
 @onready var coin_label = $CanvasLayer/CoinLabel
+@onready var flashlight_ray = $FlashLightPivot/FlashlightRay
 
 # Диалог
 var dialogue_lines: Array = []
@@ -56,6 +57,18 @@ func _ready():
 		if spawn_point:
 			global_position = spawn_point.global_position
 
+func check_flashlight_hit():
+	if not flashlight_on:
+		return
+
+	flashlight_ray.force_raycast_update()
+
+	if flashlight_ray.is_colliding():
+		var body = flashlight_ray.get_collider()
+
+		if body and body.is_in_group("mob"):
+			if body.has_method("apply_flashlight_stun"):
+				body.apply_flashlight_stun()
 func take_damage(amount: int):
 	var final_damage = amount - armor
 	if final_damage < 0:
@@ -93,6 +106,8 @@ func _physics_process(delta: float) -> void:
 			idle()
 
 	move_and_slide()
+	if flashlight_on:
+		check_flashlight_hit()
 
 	# Расход батареи, если фонарик включен
 	if flashlight_on:

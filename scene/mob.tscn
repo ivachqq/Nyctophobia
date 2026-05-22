@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://1g72rhwn65p0"]
+[gd_scene format=3 uid="uid://bxmfripr20dy"]
 
 [ext_resource type="Texture2D" uid="uid://u3gxx54rpd2k" path="res://animation/Golem_1_idle.png" id="1_gd05a"]
 [ext_resource type="Texture2D" uid="uid://cbx8n0mlo861x" path="res://animation/Golem_1_walk.png" id="2_86iwx"]

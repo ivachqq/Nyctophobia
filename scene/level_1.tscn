@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="2_rpurj"]
 [ext_resource type="Texture2D" uid="uid://dcpkpyr1xosne" path="res://animation/Gemini_Generated_Image_y06p1qy06p1qy06p.png" id="3_lsoxn"]
 [ext_resource type="Texture2D" uid="uid://d4fjxe3882r7j" path="res://animation/Gemini_Generated_Image_y06p1qy06p1qy06p-edited-free (carve.photos).png" id="4_70cbr"]
-[ext_resource type="PackedScene" uid="uid://cscn3h4abvnem" path="res://script/mob1.tscn" id="5_1gcq6"]
+[ext_resource type="PackedScene" uid="uid://cscn3h4abvnem" path="res://scene/mob1.tscn" id="5_1gcq6"]
 [ext_resource type="Texture2D" uid="uid://bikno24rs11a6" path="res://animation/parkBack.png" id="6_lsoxn"]
 [ext_resource type="Texture2D" uid="uid://codv854eufjrx" path="res://animation/Gemini_Generated_Image_bmyl5bmyl5bmyl5b.png" id="6_x17xt"]
 [ext_resource type="Texture2D" uid="uid://cu8hrpgrl4utj" path="res://animation/Gemini_Generated_Image_mkdpwsmkdpwsmkdp.png" id="9_c1764"]
@@ -569,7 +569,7 @@ polygon = PackedVector2Array(1494, 1032, 1498, 1063, 1591, 1059, 1589, 1036)
 polygon = PackedVector2Array(2719, -1535, 2720, 1537, -2784, 1538, -2784, -1536, 2705, -1534, 2704, -1541, -2863, -1568, -2970, 1728, 3002, 1675, 2913, -1737, 2718, -1542)
 
 [node name="Area2D" parent="." unique_id=1255259538 instance=ExtResource("12_a2j0k")]
-position = Vector2(862, -9)
+position = Vector2(352, 379)
 
 [node name="SpawnFromBase" type="Marker2D" parent="." unique_id=71132853]
 position = Vector2(2164, -400)
