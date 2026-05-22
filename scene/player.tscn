@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ctw6bsy1u33ua" path="res://animation/player.png" id="2_fvtld"]
 [ext_resource type="Texture2D" uid="uid://btal3nv8bma4d" path="res://animation/weapon03longsword.png" id="3_fvtld"]
 [ext_resource type="Texture2D" uid="uid://dd1v4myssmowq" path="res://animation/book icon2.png" id="4_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://ds62x845q8i52" path="res://animation/banka.png" id="5_s4jxa"]
+[ext_resource type="Texture2D" uid="uid://dapwbnqyupb6w" path="res://scene/hh.png" id="6_oh5ij"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ct4mp"]
 atlas = ExtResource("2_fvtld")
@@ -401,6 +403,22 @@ offset_right = 367.0
 offset_bottom = 410.0
 texture = ExtResource("4_ct4mp")
 metadata/_edit_use_anchors_ = true
+
+[node name="BankaIcon" type="TextureRect" parent="CanvasLayer" unique_id=1327352658]
+modulate = Color(1, 1, 1, 0)
+offset_left = -215.0
+offset_top = 185.0
+offset_right = 285.0
+offset_bottom = 685.0
+texture = ExtResource("5_s4jxa")
+
+[node name="zvetokIcon" type="TextureRect" parent="CanvasLayer" unique_id=1950753038]
+modulate = Color(1, 1, 1, 0)
+offset_left = -327.0
+offset_top = -96.0
+offset_right = 173.0
+offset_bottom = 404.0
+texture = ExtResource("6_oh5ij")
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=1746536382]
 collision_layer = 4

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b6r577x5btwmb"]
+
+[ext_resource type="Texture2D" uid="uid://oeujfej1xl8i" path="res://animation/Gemini_Generated_Image_9562wi9562wi9562.png" id="1_fvq62"]
+
+[node name="Node2D" type="Node2D" unique_id=533739528]
+
+[node name="GeminiGeneratedImage9562Wi9562Wi9562" type="Sprite2D" parent="." unique_id=1776338914]
+position = Vector2(573, 325.5)
+scale = Vector2(0.4219317, 0.42382815)
+texture = ExtResource("1_fvq62")

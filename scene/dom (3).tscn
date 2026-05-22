@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://wfaojuqwtx6o"]
+
+[ext_resource type="Texture2D" uid="uid://bsgnjsnfu7cdr" path="res://animation/Gemini_Generated_Image_qnf1c4qnf1c4qnf1.png" id="1_pbr1a"]
+[ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scene/player.tscn" id="2_mflsn"]
+[ext_resource type="Texture2D" uid="uid://khacwt4vvogp" path="res://animation/domfon.png" id="3_t7xkt"]
+[ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="4_uegfx"]
+
+[node name="Node2D" type="Node2D" unique_id=942205866]
+
+[node name="GeminiGeneratedImageQnf1c4Qnf1c4Qnf1" type="Sprite2D" parent="." unique_id=1581084669]
+position = Vector2(578.00006, 322.00003)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("1_pbr1a")
+
+[node name="player" parent="." unique_id=1079785783 instance=ExtResource("2_mflsn")]
+position = Vector2(739, 368)
+
+[node name="Domfon" type="Sprite2D" parent="." unique_id=1058181930]
+position = Vector2(578.00006, 322)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("3_t7xkt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=524168938]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1816406495]
+polygon = PackedVector2Array(750, 325, 754, 327, 764, 323, 776, 315, 785, 318, 785, 329, 789, 332, 787, 335, 792, 340, 797, 342, 802, 342, 808, 341, 814, 340, 816, 337, 819, 332, 821, 317, 842, 329, 841, 345, 845, 352, 846, 356, 852, 360, 858, 360, 865, 360, 869, 358, 872, 356, 875, 353, 875, 346, 944, 382, 942, 405, 1068, 473, 1091, 498, 820, 641, 341, 634, 68, 494, 115, 474, 218, 424, 247, 408, 414, 495, 414, 513, 421, 518, 430, 514, 433, 493, 590, 411, 589, 420, 596, 425, 603, 421, 584, 401, 414, 307, 457, 320, 499, 292, 629, 382, 646, 372, 650, 374, 650, 395, 653, 400, 657, 404, 661, 406, 666, 407, 669, 407, 675, 407, 680, 406, 685, 403, 688, 399, 689, 396, 689, 391, 690, 386, 690, 382, 689, 374, 689, 369, 688, 368, 686, 367, 684, 366, 681, 365, 677, 364, 671, 358, 663, 230, 757, 221, 749, 315, 761, 310, 801, 176, 620, 142, 425, 155, 326, 180, 195, 232, 134, 272, 78, 324, 60, 363, 45, 407, 33, 458, 29, 498, 27, 532, 35, 555, 68, 576, 148, 595, 209, 602, 331, 635, 336, 640, 853, 643, 1126, 527, 1138, 470, 1057, 374, 954, 313, 848, 249)
+
+[node name="portal" parent="." unique_id=413137148 instance=ExtResource("4_uegfx")]
+position = Vector2(699, 304)
+target_door_name = "fromhouse2"

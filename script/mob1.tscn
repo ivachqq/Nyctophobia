@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cieselnfnrv4h" path="res://script/mob.gd" id="1_jxwvr"]
 [ext_resource type="Texture2D" uid="uid://u3gxx54rpd2k" path="res://animation/Golem_1_idle.png" id="2_7n8w8"]
+[ext_resource type="Texture2D" uid="uid://b4a86lqu0pd5p" path="res://animation/ten.png" id="2_u17iq"]
 [ext_resource type="Texture2D" uid="uid://cbx8n0mlo861x" path="res://animation/Golem_1_walk.png" id="3_u17iq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8c3x"]
@@ -156,6 +157,12 @@ radius = 18.027756
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_jxwvr")
+
+[node name="Ten" type="Sprite2D" parent="." unique_id=353135728]
+modulate = Color(0.30323282, 0.30323282, 0.30323282, 0.64705884)
+position = Vector2(1.0000038, 12)
+scale = Vector2(0.28666666, 0.23333333)
+texture = ExtResource("2_u17iq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1195325703]
 position = Vector2(0, -16)

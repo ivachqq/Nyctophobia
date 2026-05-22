@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://4ef8vx2d7278"]
+
+[ext_resource type="Texture2D" uid="uid://drci4k0ck1tj2" path="res://animation/Gemini_Generated_Image_njjaf0njjaf0njja.png" id="1_fccv1"]
+[ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scene/player.tscn" id="2_girf8"]
+[ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="3_p1oo4"]
+
+[node name="Node2D" type="Node2D" unique_id=1168904012]
+
+[node name="GeminiGeneratedImageNjjaf0Njjaf0Njja" type="Sprite2D" parent="." unique_id=1922592576]
+position = Vector2(575, 320)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("1_fccv1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1783195882]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1912710492]
+polygon = PackedVector2Array(741, 436, 644, 373, 676, 358, 677, 253, 752, 225, 757, 319, 812, 339, 781, 353, 747, 435, 732, 463, 884, 388, 867, 246, 745, 201, 656, 202, 590, 241, 581, 331, 603, 394, 650, 466, 711, 508, 724, 444)
+
+[node name="player" parent="." unique_id=1079785783 instance=ExtResource("2_girf8")]
+position = Vector2(745, 366)
+
+[node name="portal" parent="." unique_id=413137148 instance=ExtResource("3_p1oo4")]
+position = Vector2(698, 311)
+target_door_name = "fromTemp4"

@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://irb2h7gdtyqd"]
+
+[ext_resource type="Texture2D" uid="uid://d1djeqt0pedeg" path="res://animation/Gemini_Generated_Image_rnhw2urnhw2urnhw.png" id="1_d2tl2"]
+[ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scene/player.tscn" id="2_n5b32"]
+[ext_resource type="PackedScene" uid="uid://vvfctpqo65av" path="res://scene/portal.tscn" id="3_tdl42"]
+[ext_resource type="Texture2D" uid="uid://bnk6q47rr8spl" path="res://animation/schoolinsideBack.png" id="4_n5b32"]
+[ext_resource type="PackedScene" uid="uid://durkyp4opjumy" path="res://scene/quest_item1.tscn" id="5_wx0bd"]
+[ext_resource type="Script" uid="uid://b17f31wal6bh" path="res://scene/quest_item_11.gd" id="6_3ktsf"]
+
+[node name="school" type="Node2D" unique_id=1941604752]
+
+[node name="GeminiGeneratedImageRnhw2Urnhw2Urnhw" type="Sprite2D" parent="." unique_id=452036146]
+position = Vector2(579, 322.00003)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("1_d2tl2")
+
+[node name="player" parent="." unique_id=1079785783 instance=ExtResource("2_n5b32")]
+position = Vector2(472, 572)
+
+[node name="portal" parent="." unique_id=413137148 instance=ExtResource("3_tdl42")]
+position = Vector2(444, 610)
+target_door_name = "FromScool"
+
+[node name="SchoolinsideBack" type="Sprite2D" parent="." unique_id=1391372450]
+position = Vector2(579.00006, 322)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("4_n5b32")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1925144107]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=101730998]
+position = Vector2(-7, 51)
+polygon = PackedVector2Array(517, 546, 592, 509, 756, 592, 845, 585, 594, 457)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=839902227]
+polygon = PackedVector2Array(327, 625, 446, 565, 508, 488, 280, 602)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=112537080]
+visible = false
+polygon = PackedVector2Array(840, 632, 1105, 491, 789, 329, 781, 339, 766, 338, 756, 330, 756, 327, 754, 325, 626, 389, 604, 379, 574, 395, 505, 359, 531, 343, 462, 293, 455, 299, 452, 307, 454, 310, 443, 319, 433, 320, 424, 320, 414, 314, 413, 306, 411, 299, 408, 299, 356, 327, 338, 317, 214, 376, 236, 409, 234, 411, 235, 415, 229, 422, 216, 422, 210, 421, 203, 416, 205, 414, 201, 407, 178, 417, 160, 408, 72, 453, 83, 471, 79, 479, 71, 480, 61, 482, 54, 479, 51, 475, 46, 465, 35, 472, 327, 629, 312, 642, 8, 489, 53, 331, 629, 154, 964, 195, 1139, 484, 987, 619, 853, 640)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1281597050]
+polygon = PackedVector2Array(413, 586, 436, 643, 377, 633)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=766491028]
+polygon = PackedVector2Array(519, 599, 488, 630, 486, 641, 548, 636)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=532227435]
+polygon = PackedVector2Array(265, 568, 263, 580, 275, 589, 289, 588, 296, 581, 291, 570)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=251593769]
+polygon = PackedVector2Array(618, 458, 623, 464, 631, 461, 629, 454)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=623145412]
+polygon = PackedVector2Array(745, 513, 741, 522, 756, 534, 764, 530, 760, 519)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1857124194]
+polygon = PackedVector2Array(889, 591, 884, 594, 890, 602, 896, 596)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=719188473]
+polygon = PackedVector2Array(676, 519, 674, 523, 698, 534, 716, 522, 696, 507)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1249869207]
+polygon = PackedVector2Array(635, 476, 619, 492, 637, 502, 656, 490)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1585223731]
+polygon = PackedVector2Array(773, 549, 758, 563, 777, 574, 792, 563)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1070055754]
+polygon = PackedVector2Array(834, 582, 819, 595, 837, 602, 852, 594)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1710859293]
+polygon = PackedVector2Array(331, 485, 359, 471, 365, 489)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=432381921]
+polygon = PackedVector2Array(424, 433, 401, 446, 436, 452)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=303521441]
+polygon = PackedVector2Array(488, 360, 471, 375, 498, 389, 506, 370)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1852145762]
+polygon = PackedVector2Array(284, 380, 312, 365, 302, 361)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1247153120]
+polygon = PackedVector2Array(364, 340, 397, 344, 392, 330)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1497157301]
+polygon = PackedVector2Array(273, 532, 274, 544, 283, 542, 281, 530)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1222315087]
+polygon = PackedVector2Array(98, 503, 106, 498, 100, 493)
+
+[node name="QuestItem" parent="." unique_id=1649086472 instance=ExtResource("5_wx0bd")]
+position = Vector2(969, 308)
+script = ExtResource("6_3ktsf")
+
+[node name="Sprite2D" parent="QuestItem" index="0" unique_id=245574874]
+position = Vector2(17.500032, 30.999996)
+scale = Vector2(0.34599993, 0.31999996)
+
+[node name="CollisionShape2D" parent="QuestItem" index="1" unique_id=1102266922]
+position = Vector2(11, 38)
+
+[editable path="QuestItem"]

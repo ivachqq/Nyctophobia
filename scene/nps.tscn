@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dw3305k4fwnvh" path="res://animation/det.png" id="1_ha7tp"]
 [ext_resource type="Script" uid="uid://dmtwf85jm8oc8" path="res://scene/nps.gd" id="1_x7u2o"]
+[ext_resource type="Texture2D" uid="uid://b4a86lqu0pd5p" path="res://animation/ten.png" id="2_kb6gh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x7u2o"]
 radius = 41.01219
@@ -9,6 +10,12 @@ radius = 41.01219
 [node name="Area2D" type="Area2D" unique_id=602187846]
 collision_mask = 2
 script = ExtResource("1_x7u2o")
+
+[node name="Ten" type="Sprite2D" parent="." unique_id=973543052]
+modulate = Color(1, 1, 1, 0.6117647)
+position = Vector2(-1.0000019, 21)
+scale = Vector2(0.33333334, 0.22)
+texture = ExtResource("2_kb6gh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1390530902]
 texture = ExtResource("1_ha7tp")
